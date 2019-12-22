@@ -5,13 +5,15 @@ import '../css/header.css';
 
 const Header = ({}) => (
   <header>
-    <nav>
-      <ul>
-        <li><button>Home</button></li>
-        <li><button>Clues</button></li>
-        <li><button>Language</button></li>
-      </ul>
-    </nav>
+    <div className="inner-container">
+      <nav>
+        <ul>
+          <li><button type="button">Home</button></li>
+          <li><button type="button">Clues</button></li>
+          <li><button type="button">Language</button></li>
+        </ul>
+      </nav>
+    </div>
   </header>
 );
 
