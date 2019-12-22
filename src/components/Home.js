@@ -1,10 +1,12 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
+import Layout from './Layout';
+
 const Home = ({}) => (
-  <div>
-    home
-  </div>
+  <Layout>
+    Home
+  </Layout>
 );
 
 Home.propTypes = {
