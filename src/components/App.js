@@ -4,8 +4,11 @@ import '../css/App.css';
 import Home from './Home';
 import CluesMain from './CluesMain';
 
+import wordsData from '../data/words';
+
 function App() {
-  const [section, setSection] = useState('home');
+  const [words, setWords] = useState(wordsData);
+  const [section, setSection] = useState('clues');
 
   const handleSectionClick = (sectionName) => {
     setSection(sectionName);
@@ -15,6 +18,7 @@ function App() {
     return (
       <CluesMain
         handleSectionClick={handleSectionClick}
+        words={words}
       />
     );
   }
