@@ -6,9 +6,9 @@ import Footer from './Footer';
 
 import '../css/layout.css';
 
-const Layout = ({ children }) => (
+const Layout = ({ handleSectionClick, children }) => (
   <div>
-    <Header />
+    <Header handleSectionClick={handleSectionClick} />
     <main>
       {children}
     </main>
@@ -21,6 +21,7 @@ Layout.propTypes = {
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
   ]),
+  handleSectionClick: PropTypes.func,
 };
 
 export default Layout;
