@@ -10,7 +10,9 @@ const Layout = ({ handleSectionClick, children }) => (
   <div>
     <Header handleSectionClick={handleSectionClick} />
     <main>
-      {children}
+      <div className="inner-container">
+        {children}
+      </div>
     </main>
     <Footer />
   </div>
