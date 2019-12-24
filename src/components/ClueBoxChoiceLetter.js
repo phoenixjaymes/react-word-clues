@@ -7,7 +7,7 @@ const ClueLetter = ({ children }) => {
 
   return (
     <div className={styles.wrap}>
-      <span>{children}</span>
+      <button className={styles.button} type="button">{children}</button>
     </div>
   );
 };
