@@ -3,17 +3,17 @@ import PropTypes from 'prop-types';
 
 import styles from '../css/clueBoxChoiceLetter.module.css';
 
-const ClueLetter = ({ children, handleChoiceClick }) => {
+const ClueLetter = ({ letter, handleChoiceClick }) => {
 
   return (
     <div className={styles.wrap}>
-      <button className={styles.button} type="button" onClick={() => handleChoiceClick({ id: '1' })}>{children}</button>
+      <button className={styles.button} type="button" onClick={() => handleChoiceClick({ id: '1' })}>{letter.letter}</button>
     </div>
   );
 };
 
 ClueLetter.propTypes = {
-  children: PropTypes.string,
+  letter: PropTypes.shape(),
   handleChoiceClick: PropTypes.func,
 };
 
