@@ -2,15 +2,17 @@ import React from 'react';
 import PropTypes from 'prop-types';
 
 import Layout from './Layout';
+import ClueBoxContainer from './ClueBoxContainer';
 
-const CluesMain = ({ handleSectionClick }) => (
+const CluesMain = ({ words, handleSectionClick }) => (
   <Layout handleSectionClick={handleSectionClick}>
     <h1>Clues main</h1>
-    <p>test</p>
+    <ClueBoxContainer words={words} />
   </Layout>
 );
 
 CluesMain.propTypes = {
+  words: PropTypes.arrayOf(PropTypes.object),
   handleSectionClick: PropTypes.func,
 };
 

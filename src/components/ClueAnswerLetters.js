@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import ClueLetter from './ClueLetter';
 
+import styles from '../css/clueAnswerLetters.module.css';
+
 const CluesAnswerLetters = ({ word }) => {
   const wordArray = Array.from(word);
   const letterObjects = wordArray.map((letter, index) => ({ id: index, letter }));
@@ -14,7 +16,7 @@ const CluesAnswerLetters = ({ word }) => {
   });
 
   return (
-    <div>
+    <div className={styles.container}>
       {answerLetters}
     </div>
   );

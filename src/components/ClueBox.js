@@ -4,10 +4,12 @@ import PropTypes from 'prop-types';
 import ClueAnswerLetters from './ClueAnswerLetters';
 import ClueChoiceLetters from './ClueChoiceLetters';
 
+import styles from '../css/clueBox.module.css';
+
 const ClueBox = ({ word, clue }) => {
 
   return (
-    <div style={{ backgroundColor: '#fcf' }}>
+    <div className={styles.container}>
       <p>{clue}</p>
       <ClueAnswerLetters word={word} />
       <ClueChoiceLetters word={word} />

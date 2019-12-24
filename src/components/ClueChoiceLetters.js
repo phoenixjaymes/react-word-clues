@@ -3,6 +3,8 @@ import PropTypes from 'prop-types';
 
 import ClueLetter from './ClueLetter';
 
+import styles from '../css/cluesChoiceLetters.module.css';
+
 const CluesChoiceLetters = ({ word }) => {
   function shuffle(array) {
     const oldArray = array;
@@ -29,7 +31,7 @@ const CluesChoiceLetters = ({ word }) => {
   ));
 
   return (
-    <div>
+    <div className={styles.container}>
       {choiceLetters}
     </div>
   );
