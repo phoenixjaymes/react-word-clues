@@ -7,16 +7,16 @@ import ClueBoxChoice from './ClueBoxChoice';
 import styles from '../css/clueBox.module.css';
 
 const ClueBox = ({ word, clue }) => {
-  const answerWordArray = Array.from(word).map((letter, index) => (
+  const answerArray = Array.from(word).map((letter, index) => (
     {
       id: index,
       letter,
-      value: '',
-      fromId: '',
+      choiceLetter: '',
+      choiceId: '',
     }
   ));
 
-  const choiceWordArray = Array.from(word).map((letter, index) => (
+  const choiceArray = Array.from(word).map((letter, index) => (
     {
       id: index,
       letter,
@@ -24,6 +24,9 @@ const ClueBox = ({ word, clue }) => {
       isDisabled: false,
     }
   ));
+
+  const [answerWordArray, setAnswerWordArray] = useState(answerArray);
+  const [choiceWordArray, setChoiceWordArray] = useState(choiceArray);
 
   const handleAnswerClick = (answerObj) => {
 
