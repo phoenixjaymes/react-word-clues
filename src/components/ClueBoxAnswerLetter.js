@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 
 import styles from '../css/clueBoxAnswerLetter.module.css';
 
-const ClueBoxAnswerLetter = ({ children }) => {
+const ClueBoxAnswerLetter = ({ children, handleAnswerClick }) => {
   if (children !== '') {
     return (
       <div className={styles.wrap}>
-        <button className={styles.button} type="button">{children}</button>
+        <button className={styles.button} type="button" onClick={() => handleAnswerClick({ id: '2' })}>{children}</button>
       </div>
     );
   }
@@ -20,6 +20,7 @@ const ClueBoxAnswerLetter = ({ children }) => {
 
 ClueBoxAnswerLetter.propTypes = {
   children: PropTypes.string,
+  handleAnswerClick: PropTypes.func,
 };
 
 export default ClueBoxAnswerLetter;
