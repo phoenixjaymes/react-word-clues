@@ -5,9 +5,9 @@ import ClueBoxAnswerLetter from './ClueBoxAnswerLetter';
 
 import styles from '../css/clueBoxAnswer.module.css';
 
-const ClueBoxAnswer = ({ answerWordArray }) => {
+const ClueBoxAnswer = ({ answerWordArray, handleAnswerClick }) => {
   const answerLetters = answerWordArray.map((letter) => (
-    <ClueBoxAnswerLetter key={letter.id}>{letter.value}</ClueBoxAnswerLetter>
+    <ClueBoxAnswerLetter key={letter.id} handleAnswerClick={handleAnswerClick}>{letter.value}</ClueBoxAnswerLetter>
   ));
 
   return (
@@ -19,6 +19,7 @@ const ClueBoxAnswer = ({ answerWordArray }) => {
 
 ClueBoxAnswer.propTypes = {
   answerWordArray: PropTypes.arrayOf(PropTypes.object),
+  handleAnswerClick: PropTypes.func,
 };
 
 export default ClueBoxAnswer;
