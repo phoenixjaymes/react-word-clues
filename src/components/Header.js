@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../css/header.css';
+import '../css/header.module.css';
 
 const Header = ({ handleSectionClick }) => (
   <header>
