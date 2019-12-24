@@ -1,8 +1,8 @@
 import React, { useState } from 'react';
 import PropTypes from 'prop-types';
 
-import ClueAnswerLetters from './ClueBoxAnswer';
-import ClueChoiceLetters from './ClueBoxChoice';
+import ClueBoxAnswer from './ClueBoxAnswer';
+import ClueBoxChoice from './ClueBoxChoice';
 
 import styles from '../css/clueBox.module.css';
 
@@ -21,17 +21,20 @@ const ClueBox = ({ word, clue }) => {
       id: index,
       letter,
       value: '',
-      fromId: '',
+      isDisabled: false,
     }
   ));
 
-  console.log(answerWordArray);
+  const handleChoiceClick = (choiceObj) => {
+
+    console.log(choiceObj);
+  };
 
   return (
     <div className={styles.container}>
-      <p>{clue}</p>
-      <ClueAnswerLetters answerWordArray={answerWordArray} />
-      <ClueChoiceLetters choiceWordArray={choiceWordArray} />
+      <h3>{clue}</h3>
+      <ClueBoxAnswer answerWordArray={answerWordArray} />
+      <ClueBoxChoice choiceWordArray={choiceWordArray} handleChoiceClick={handleChoiceClick} />
     </div>
   );
 };
