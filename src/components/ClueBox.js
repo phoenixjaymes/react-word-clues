@@ -25,6 +25,11 @@ const ClueBox = ({ word, clue }) => {
     }
   ));
 
+  const handleAnswerClick = (answerObj) => {
+
+    console.log(answerObj);
+  };
+
   const handleChoiceClick = (choiceObj) => {
 
     console.log(choiceObj);
@@ -33,7 +38,7 @@ const ClueBox = ({ word, clue }) => {
   return (
     <div className={styles.container}>
       <h3>{clue}</h3>
-      <ClueBoxAnswer answerWordArray={answerWordArray} />
+      <ClueBoxAnswer answerWordArray={answerWordArray} handleAnswerClick={handleAnswerClick} />
       <ClueBoxChoice choiceWordArray={choiceWordArray} handleChoiceClick={handleChoiceClick} />
     </div>
   );
