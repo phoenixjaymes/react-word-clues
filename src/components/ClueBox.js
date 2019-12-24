@@ -1,8 +1,8 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ClueAnswerLetters from './ClueAnswerLetters';
-import ClueChoiceLetters from './ClueChoiceLetters';
+import ClueAnswerLetters from './ClueBoxAnswer';
+import ClueChoiceLetters from './ClueBoxChoice';
 
 import styles from '../css/clueBox.module.css';
 

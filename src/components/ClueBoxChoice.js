@@ -1,11 +1,11 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ClueLetter from './ClueLetter';
+import ClueBoxChoiceLetter from './ClueBoxChoiceLetter';
 
-import styles from '../css/cluesChoiceLetters.module.css';
+import styles from '../css/clueBoxChoice.module.css';
 
-const CluesChoiceLetters = ({ word }) => {
+const ClueBoxChoice = ({ word }) => {
   function shuffle(array) {
     const oldArray = array;
     let tmpArray = [];
@@ -27,7 +27,7 @@ const CluesChoiceLetters = ({ word }) => {
   const letterObjects = wordArray.map((letter, index) => ({ id: index, letter }));
 
   const choiceLetters = letterObjects.map((letter) => (
-    <ClueLetter key={letter.id}>{letter.letter}</ClueLetter>
+    <ClueBoxChoiceLetter key={letter.id}>{letter.letter}</ClueBoxChoiceLetter>
   ));
 
   return (
@@ -37,8 +37,8 @@ const CluesChoiceLetters = ({ word }) => {
   );
 };
 
-CluesChoiceLetters.propTypes = {
+ClueBoxChoice.propTypes = {
   word: PropTypes.string,
 };
 
-export default CluesChoiceLetters;
+export default ClueBoxChoice;

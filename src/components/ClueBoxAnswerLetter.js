@@ -1,9 +1,9 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import styles from '../css/ClueLetter.module.css';
+import styles from '../css/clueBoxAnswerLetter.module.css';
 
-const ClueLetter = ({ children }) => {
+const ClueBoxAnswerLetter = ({ children }) => {
 
   return (
     <div className={styles.wrap}>
@@ -12,8 +12,8 @@ const ClueLetter = ({ children }) => {
   );
 };
 
-ClueLetter.propTypes = {
+ClueBoxAnswerLetter.propTypes = {
   children: PropTypes.string,
 };
 
-export default ClueLetter;
+export default ClueBoxAnswerLetter;

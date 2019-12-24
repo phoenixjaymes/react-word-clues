@@ -1,17 +1,17 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import ClueLetter from './ClueLetter';
+import ClueBoxAnswerLetter from './ClueBoxAnswerLetter';
 
-import styles from '../css/clueAnswerLetters.module.css';
+import styles from '../css/clueBoxAnswer.module.css';
 
-const CluesAnswerLetters = ({ word }) => {
+const ClueBoxAnswer = ({ word }) => {
   const wordArray = Array.from(word);
   const letterObjects = wordArray.map((letter, index) => ({ id: index, letter }));
 
   const answerLetters = letterObjects.map((letter) => {
     return (
-      <ClueLetter key={letter.id}>{letter.letter}</ClueLetter>
+      <ClueBoxAnswerLetter key={letter.id}>{letter.letter}</ClueBoxAnswerLetter>
     );
   });
 
@@ -22,8 +22,8 @@ const CluesAnswerLetters = ({ word }) => {
   );
 };
 
-CluesAnswerLetters.propTypes = {
+ClueBoxAnswer.propTypes = {
   word: PropTypes.string,
 };
 
-export default CluesAnswerLetters;
+export default ClueBoxAnswer;
