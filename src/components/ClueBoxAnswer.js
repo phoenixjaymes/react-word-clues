@@ -5,15 +5,10 @@ import ClueBoxAnswerLetter from './ClueBoxAnswerLetter';
 
 import styles from '../css/clueBoxAnswer.module.css';
 
-const ClueBoxAnswer = ({ word }) => {
-  const wordArray = Array.from(word);
-  const letterObjects = wordArray.map((letter, index) => ({ id: index, letter }));
-
-  const answerLetters = letterObjects.map((letter) => {
-    return (
-      <ClueBoxAnswerLetter key={letter.id}>{letter.letter}</ClueBoxAnswerLetter>
-    );
-  });
+const ClueBoxAnswer = ({ answerWordArray }) => {
+  const answerLetters = answerWordArray.map((letter) => (
+    <ClueBoxAnswerLetter key={letter.id}>{letter.value}</ClueBoxAnswerLetter>
+  ));
 
   return (
     <div className={styles.container}>
@@ -23,7 +18,7 @@ const ClueBoxAnswer = ({ word }) => {
 };
 
 ClueBoxAnswer.propTypes = {
-  word: PropTypes.string,
+  answerWordArray: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ClueBoxAnswer;

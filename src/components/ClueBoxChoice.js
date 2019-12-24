@@ -5,7 +5,7 @@ import ClueBoxChoiceLetter from './ClueBoxChoiceLetter';
 
 import styles from '../css/clueBoxChoice.module.css';
 
-const ClueBoxChoice = ({ word }) => {
+const ClueBoxChoice = ({ choiceWordArray }) => {
   function shuffle(array) {
     const oldArray = array;
     let tmpArray = [];
@@ -22,11 +22,9 @@ const ClueBoxChoice = ({ word }) => {
     return newArray;
   }
 
-  let wordArray = Array.from(word);
-  wordArray = shuffle(wordArray);
-  const letterObjects = wordArray.map((letter, index) => ({ id: index, letter }));
+  const wordArray = shuffle(choiceWordArray);
 
-  const choiceLetters = letterObjects.map((letter) => (
+  const choiceLetters = wordArray.map((letter) => (
     <ClueBoxChoiceLetter key={letter.id}>{letter.letter}</ClueBoxChoiceLetter>
   ));
 
@@ -38,7 +36,7 @@ const ClueBoxChoice = ({ word }) => {
 };
 
 ClueBoxChoice.propTypes = {
-  word: PropTypes.string,
+  choiceWordArray: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ClueBoxChoice;
