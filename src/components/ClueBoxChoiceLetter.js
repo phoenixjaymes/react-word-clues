@@ -4,10 +4,14 @@ import PropTypes from 'prop-types';
 import styles from '../css/clueBoxChoiceLetter.module.css';
 
 const ClueLetter = ({ letter, handleChoiceClick }) => {
+  const choiceObj = {
+    choiceId: letter.id,
+    choiceLetter: letter.letter,
+  };
 
   return (
     <div className={styles.wrap}>
-      <button className={styles.button} type="button" onClick={() => handleChoiceClick({ id: '1' })}>{letter.letter}</button>
+      <button className={styles.button} type="button" onClick={() => handleChoiceClick(choiceObj)}>{letter.letter}</button>
     </div>
   );
 };
