@@ -7,7 +7,7 @@ import styles from '../css/clueBoxAnswer.module.css';
 
 const ClueBoxAnswer = ({ answerWordArray, handleAnswerClick }) => {
   const answerLetters = answerWordArray.map((letter) => (
-    <ClueBoxAnswerLetter key={letter.id} handleAnswerClick={handleAnswerClick}>{letter.value}</ClueBoxAnswerLetter>
+    <ClueBoxAnswerLetter key={letter.id} letter={letter} handleAnswerClick={handleAnswerClick} />
   ));
 
   return (

@@ -25,7 +25,7 @@ const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick }) => {
   const wordArray = shuffle(choiceWordArray);
 
   const choiceLetters = wordArray.map((letter) => (
-    <ClueBoxChoiceLetter key={letter.id} handleChoiceClick={handleChoiceClick}>{letter.letter}</ClueBoxChoiceLetter>
+    <ClueBoxChoiceLetter key={letter.id} letter={letter} handleChoiceClick={handleChoiceClick} />
   ));
 
   return (
