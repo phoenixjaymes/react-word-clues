@@ -1,16 +1,16 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-import '../css/header.module.css';
+import styles from '../css/header.module.css';
 
 const Header = ({ handleSectionClick }) => (
-  <header>
-    <div className="inner-container">
+  <header className={styles.header}>
+    <div className={styles.inner}>
       <nav>
-        <ul>
-          <li><button type="button" onClick={() => handleSectionClick('home')}>Home</button></li>
-          <li><button type="button" onClick={() => handleSectionClick('clues')}>Clues</button></li>
-          <li><button type="button">Language</button></li>
+        <ul className={styles.ul}>
+          <li><button className={styles.button} type="button" onClick={() => handleSectionClick('home')}>Home</button></li>
+          <li><button className={styles.button} type="button" onClick={() => handleSectionClick('clues')}>Clues</button></li>
+          <li><button className={styles.button} type="button">Language</button></li>
         </ul>
       </nav>
     </div>
