@@ -7,15 +7,14 @@ import styles from '../css/clueBoxChoice.module.css';
 
 const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick }) => {
   function shuffle(array) {
-    const oldArray = array;
-    let tmpArray = [];
+    const oldArray = [...array];
     const newArray = [];
 
     for (let i = array.length - 1; i > 0; i -= 1) {
       const j = Math.floor(Math.random() * (i + 1));
 
-      tmpArray = oldArray.splice(j, 1);
-      newArray.push(tmpArray[0]);
+      const tempArray = oldArray.splice(j, 1);
+      newArray.push(tempArray[0]);
     }
 
     newArray.push(oldArray[0]);
