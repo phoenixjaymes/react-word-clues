@@ -29,14 +29,80 @@ const ClueBox = ({ word, clue }) => {
   const [choiceWordArray, setChoiceWordArray] = useState(choiceArray);
 
   const handleAnswerClick = (answerObj) => {
+    const tempAnswerArray = [];
+    const tempChoiceArray = [];
 
-    console.log(answerObj);
+    // Answer word
+    for (let i = 0; i < answerWordArray.length; i += 1) {
+      if (answerWordArray[i].id === answerObj.positionId) {
+        const obj = {
+          ...answerWordArray[i],
+          choiceLetter: '',
+          choiceId: '',
+        };
+
+        tempAnswerArray.push(obj);
+      } else {
+        tempAnswerArray.push(answerWordArray[i]);
+      }
+    }
+
+    // Choice word
+    for (let i = 0; i < choiceWordArray.length; i += 1) {
+      if (choiceWordArray[i].id === answerObj.choiceId) {
+        const obj = {
+          ...choiceWordArray[i],
+          isDisabled: false,
+        };
+
+        tempChoiceArray.push(obj);
+      } else {
+        tempChoiceArray.push(choiceWordArray[i]);
+      }
+    }
+
+    setAnswerWordArray(tempAnswerArray);
+    setChoiceWordArray(tempChoiceArray);
   };
 
-  const handleChoiceClick = (choiceObj) => {
+  function handleChoiceClick(choiceObj) {
+    const tempAnswerArray = [];
+    const tempChoiceArray = [];
+    let emptyAnswerFound = false;
 
-    console.log(choiceObj);
-  };
+    // Answer words
+    for (let i = 0; i < answerWordArray.length; i += 1) {
+      if (answerWordArray[i].choiceLetter === '' && emptyAnswerFound === false) {
+        const obj = {
+          ...answerWordArray[i],
+          choiceLetter: choiceObj.choiceLetter,
+          choiceId: choiceObj.choiceId,
+        };
+
+        tempAnswerArray.push(obj);
+        emptyAnswerFound = true;
+      } else {
+        tempAnswerArray.push(answerWordArray[i]);
+      }
+    }
+
+    // Choice words
+    for (let i = 0; i < choiceWordArray.length; i += 1) {
+      if (choiceWordArray[i].id === choiceObj.choiceId) {
+        const obj = {
+          ...choiceWordArray[i],
+          isDisabled: true,
+        };
+
+        tempChoiceArray.push(obj);
+      } else {
+        tempChoiceArray.push(choiceWordArray[i]);
+      }
+    }
+
+    setAnswerWordArray(tempAnswerArray);
+    setChoiceWordArray(tempChoiceArray);
+  }
 
   return (
     <div className={styles.container}>
