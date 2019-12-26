@@ -5,9 +5,14 @@ import ClueBoxAnswerLetter from './ClueBoxAnswerLetter';
 
 import styles from '../css/clueBoxAnswer.module.css';
 
-const ClueBoxAnswer = ({ answerWordArray, handleAnswerClick }) => {
+const ClueBoxAnswer = ({ answerWordArray, isCheckingAnswer, handleAnswerClick }) => {
   const answerLetters = answerWordArray.map((letter) => (
-    <ClueBoxAnswerLetter key={letter.id} letter={letter} handleAnswerClick={handleAnswerClick} />
+    <ClueBoxAnswerLetter
+      key={letter.id}
+      letter={letter}
+      isCheckingAnswer={isCheckingAnswer}
+      handleAnswerClick={handleAnswerClick}
+    />
   ));
 
   return (
@@ -19,6 +24,7 @@ const ClueBoxAnswer = ({ answerWordArray, handleAnswerClick }) => {
 
 ClueBoxAnswer.propTypes = {
   answerWordArray: PropTypes.arrayOf(PropTypes.object),
+  isCheckingAnswer: PropTypes.bool,
   handleAnswerClick: PropTypes.func,
 };
 
