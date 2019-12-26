@@ -13,6 +13,7 @@ const ClueBox = ({ word, clue }) => {
       letter,
       choiceLetter: '',
       choiceId: '',
+      isCorrect: false,
     }
   ));
 
@@ -27,6 +28,40 @@ const ClueBox = ({ word, clue }) => {
 
   const [answerWordArray, setAnswerWordArray] = useState(answerArray);
   const [choiceWordArray, setChoiceWordArray] = useState(choiceArray);
+  const [isCheckingAnswer, setIsCheckingAnswer] = useState(false);
+
+  const checkAnswer = () => {
+    let filledLetterCount = 0;
+    const wordLength = answerWordArray.length;
+
+    // loop over answer and check choice letter != '', add to cntr,
+    for (let i = 0; i < wordLength; i += 1) {
+      if (answerWordArray[i].choiceLetter !== '') {
+        filledLetterCount += 1;
+      }
+    }
+
+    if (filledLetterCount === wordLength) {
+      setIsCheckingAnswer(true);
+
+      const tempArray = answerWordArray.map((letter) => {
+        if (letter.letter === letter.choiceLetter) {
+          return {
+            ...letter,
+            isCorrect: true,
+          };
+        }
+        return {
+          ...letter,
+          isCorrect: false,
+        };
+      });
+
+      setAnswerWordArray(tempArray);
+    } else {
+      setIsCheckingAnswer(false);
+    }
+  };
 
   const handleAnswerClick = (answerObj) => {
     const tempAnswerArray = [];
@@ -65,12 +100,14 @@ const ClueBox = ({ word, clue }) => {
     setChoiceWordArray(tempChoiceArray);
   };
 
-  function handleChoiceClick(choiceObj) {
+  const handleChoiceClick = (choiceObj) => {
     const tempAnswerArray = [];
     const tempChoiceArray = [];
     let emptyAnswerFound = false;
 
-    // Answer words
+    setIsCheckingAnswer(false);
+
+    // Answer word
     for (let i = 0; i < answerWordArray.length; i += 1) {
       if (answerWordArray[i].choiceLetter === '' && emptyAnswerFound === false) {
         const obj = {
@@ -86,7 +123,7 @@ const ClueBox = ({ word, clue }) => {
       }
     }
 
-    // Choice words
+    // Choice word
     for (let i = 0; i < choiceWordArray.length; i += 1) {
       if (choiceWordArray[i].id === choiceObj.choiceId) {
         const obj = {
@@ -102,13 +139,19 @@ const ClueBox = ({ word, clue }) => {
 
     setAnswerWordArray(tempAnswerArray);
     setChoiceWordArray(tempChoiceArray);
-  }
+  };
 
   return (
     <div className={styles.container}>
       <h3>{clue}</h3>
-      <ClueBoxAnswer answerWordArray={answerWordArray} handleAnswerClick={handleAnswerClick} />
+      <ClueBoxAnswer
+        answerWordArray={answerWordArray}
+        isCheckingAnswer={isCheckingAnswer}
+        handleAnswerClick={handleAnswerClick}
+      />
       <ClueBoxChoice choiceWordArray={choiceWordArray} handleChoiceClick={handleChoiceClick} />
+
+      <button type="button" onClick={() => checkAnswer()}>Check</button>
     </div>
   );
 };
