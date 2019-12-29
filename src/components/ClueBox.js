@@ -26,8 +26,23 @@ const ClueBox = ({ word, clue }) => {
     }
   ));
 
+  const shuffle = (array) => {
+    const oldArray = [...array];
+    const newArray = [];
+
+    for (let i = array.length - 1; i > 0; i -= 1) {
+      const j = Math.floor(Math.random() * (i + 1));
+
+      const tempArray = oldArray.splice(j, 1);
+      newArray.push(tempArray[0]);
+    }
+
+    newArray.push(oldArray[0]);
+    return newArray;
+  };
+
   const [answerWordArray, setAnswerWordArray] = useState(answerArray);
-  const [choiceWordArray, setChoiceWordArray] = useState(choiceArray);
+  const [choiceWordArray, setChoiceWordArray] = useState(shuffle(choiceArray));
   const [isCheckingAnswer, setIsCheckingAnswer] = useState(false);
   const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
 
