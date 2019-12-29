@@ -39,7 +39,7 @@ const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick, answerIsCorrect }) 
 ClueBoxChoice.propTypes = {
   choiceWordArray: PropTypes.arrayOf(PropTypes.object),
   handleChoiceClick: PropTypes.func,
-  answerIsCorrect: PropTypes.func,
+  answerIsCorrect: PropTypes.bool,
 };
 
 export default ClueBoxChoice;
