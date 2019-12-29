@@ -29,9 +29,11 @@ const ClueBox = ({ word, clue }) => {
   const [answerWordArray, setAnswerWordArray] = useState(answerArray);
   const [choiceWordArray, setChoiceWordArray] = useState(choiceArray);
   const [isCheckingAnswer, setIsCheckingAnswer] = useState(false);
+  const [answerIsCorrect, setAnswerIsCorrect] = useState(false);
 
   const checkAnswer = () => {
     let filledLetterCount = 0;
+    let numberCorrect = 0;
     const wordLength = answerWordArray.length;
 
     // loop over answer and check choice letter != '', add to cntr,
@@ -46,6 +48,7 @@ const ClueBox = ({ word, clue }) => {
 
       const tempArray = answerWordArray.map((letter) => {
         if (letter.letter === letter.choiceLetter) {
+          numberCorrect += 1;
           return {
             ...letter,
             isCorrect: true,
@@ -56,6 +59,10 @@ const ClueBox = ({ word, clue }) => {
           isCorrect: false,
         };
       });
+
+      if (numberCorrect === wordLength) {
+        setAnswerIsCorrect(true);
+      }
 
       setAnswerWordArray(tempArray);
     } else {
@@ -141,17 +148,24 @@ const ClueBox = ({ word, clue }) => {
     setChoiceWordArray(tempChoiceArray);
   };
 
+  const buttonClassName = answerIsCorrect ? styles.buttonCorrect : '';
+
   return (
     <div className={styles.container}>
       <h3>{clue}</h3>
       <ClueBoxAnswer
+        answerIsCorrect={answerIsCorrect}
         answerWordArray={answerWordArray}
         isCheckingAnswer={isCheckingAnswer}
         handleAnswerClick={handleAnswerClick}
       />
-      <ClueBoxChoice choiceWordArray={choiceWordArray} handleChoiceClick={handleChoiceClick} />
+      <ClueBoxChoice
+        answerIsCorrect={answerIsCorrect}
+        choiceWordArray={choiceWordArray}
+        handleChoiceClick={handleChoiceClick}
+      />
 
-      <button type="button" onClick={() => checkAnswer()}>Check</button>
+      <button className={buttonClassName} type="button" onClick={() => checkAnswer()}>Check</button>
     </div>
   );
 };
