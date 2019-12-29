@@ -5,7 +5,7 @@ import ClueBoxChoiceLetter from './ClueBoxChoiceLetter';
 
 import styles from '../css/clueBoxChoice.module.css';
 
-const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick }) => {
+const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick, answerIsCorrect }) => {
   function shuffle(array) {
     const oldArray = [...array];
     const newArray = [];
@@ -27,8 +27,10 @@ const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick }) => {
     <ClueBoxChoiceLetter key={letter.id} letter={letter} handleChoiceClick={handleChoiceClick} />
   ));
 
+  const classNames = !answerIsCorrect ? styles.container : `${styles.container} ${styles.hidden}`;
+
   return (
-    <div className={styles.container}>
+    <div className={classNames}>
       {choiceLetters}
     </div>
   );
@@ -37,6 +39,7 @@ const ClueBoxChoice = ({ choiceWordArray, handleChoiceClick }) => {
 ClueBoxChoice.propTypes = {
   choiceWordArray: PropTypes.arrayOf(PropTypes.object),
   handleChoiceClick: PropTypes.func,
+  answerIsCorrect: PropTypes.func,
 };
 
 export default ClueBoxChoice;
