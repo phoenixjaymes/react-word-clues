@@ -6,10 +6,11 @@ import Footer from './Footer';
 
 import styles from '../css/layout.module.css';
 
-const Layout = ({ handleSectionClick, children }) => (
+const Layout = ({ header, handleSectionClick, children }) => (
   <div className={styles.container}>
     <Header handleSectionClick={handleSectionClick} />
     <main className={styles.main}>
+      <h1 className={styles.header}>{header}</h1>
       <div className={styles.inner}>
         {children}
       </div>
@@ -19,6 +20,7 @@ const Layout = ({ handleSectionClick, children }) => (
 );
 
 Layout.propTypes = {
+  header: PropTypes.string,
   children: PropTypes.oneOfType([
     PropTypes.element,
     PropTypes.arrayOf(PropTypes.element),
