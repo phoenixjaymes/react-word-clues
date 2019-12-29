@@ -3,7 +3,12 @@ import PropTypes from 'prop-types';
 
 import styles from '../css/clueBoxAnswerLetter.module.css';
 
-const ClueBoxAnswerLetter = ({ letter, isCheckingAnswer, handleAnswerClick }) => {
+const ClueBoxAnswerLetter = ({
+  letter,
+  isCheckingAnswer,
+  handleAnswerClick,
+  answerIsCorrect,
+}) => {
   const answerObj = {
     positionId: letter.id,
     choiceId: letter.choiceId,
@@ -11,6 +16,14 @@ const ClueBoxAnswerLetter = ({ letter, isCheckingAnswer, handleAnswerClick }) =>
   };
 
   const wrapClassName = (isCheckingAnswer && !letter.isCorrect) ? styles.wrapChecking : styles.wrap;
+
+  if (answerIsCorrect) {
+    return (
+      <div className={styles.wrap}>
+        <button className={styles.button} type="button" disabled>{letter.choiceLetter}</button>
+      </div>
+    );
+  }
 
   if (letter.choiceLetter !== '') {
     return (
@@ -30,6 +43,7 @@ ClueBoxAnswerLetter.propTypes = {
   letter: PropTypes.shape(),
   isCheckingAnswer: PropTypes.bool,
   handleAnswerClick: PropTypes.func,
+  answerIsCorrect: PropTypes.bool,
 };
 
 export default ClueBoxAnswerLetter;
