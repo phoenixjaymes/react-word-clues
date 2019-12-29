@@ -148,11 +148,11 @@ const ClueBox = ({ word, clue }) => {
     setChoiceWordArray(tempChoiceArray);
   };
 
-  const buttonClassName = answerIsCorrect ? styles.buttonCorrect : '';
+  const buttonClassName = answerIsCorrect ? styles.buttonCorrect : styles.button;
 
   return (
     <div className={styles.container}>
-      <h3>{clue}</h3>
+      <h3 className={styles.header}>{clue}</h3>
       <ClueBoxAnswer
         answerIsCorrect={answerIsCorrect}
         answerWordArray={answerWordArray}
