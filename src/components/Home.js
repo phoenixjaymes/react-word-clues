@@ -4,8 +4,11 @@ import PropTypes from 'prop-types';
 import Layout from './Layout';
 
 const Home = ({ handleSectionClick }) => (
-  <Layout handleSectionClick={handleSectionClick}>
-    <h1>Home</h1>
+  <Layout
+    header="Home"
+    handleSectionClick={handleSectionClick}
+  >
+    <p>Stuff</p>
   </Layout>
 );
 

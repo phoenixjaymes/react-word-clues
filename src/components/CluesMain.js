@@ -5,8 +5,10 @@ import Layout from './Layout';
 import ClueBoxContainer from './ClueBoxContainer';
 
 const CluesMain = ({ words, handleSectionClick }) => (
-  <Layout handleSectionClick={handleSectionClick}>
-    <h1>Clues main</h1>
+  <Layout
+    header="Clues Main"
+    handleSectionClick={handleSectionClick}
+  >
     <ClueBoxContainer words={words} />
   </Layout>
 );
