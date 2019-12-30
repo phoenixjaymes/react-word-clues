@@ -4,17 +4,17 @@ import PropTypes from 'prop-types';
 import Layout from './Layout';
 import ClueBoxContainer from './ClueBoxContainer';
 
-const CluesMain = ({ words, handleSectionClick }) => (
+const CluesMain = ({ wordList, handleSectionClick }) => (
   <Layout
     header="Clues Main"
     handleSectionClick={handleSectionClick}
   >
-    <ClueBoxContainer words={words} />
+    <ClueBoxContainer wordList={wordList} />
   </Layout>
 );
 
 CluesMain.propTypes = {
-  words: PropTypes.arrayOf(PropTypes.object),
+  wordList: PropTypes.arrayOf(PropTypes.object),
   handleSectionClick: PropTypes.func,
 };
 
