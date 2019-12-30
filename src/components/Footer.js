@@ -1,6 +1,6 @@
 import React from 'react';
 
-import styles from '../css/header.module.css';
+import styles from '../css/footer.module.css';
 
 const Footer = () => {
   const currYear = new Date().getFullYear();
