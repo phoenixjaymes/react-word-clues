@@ -7,7 +7,8 @@ import ClueBoxChoice from './ClueBoxChoice';
 import styles from '../css/clueBox.module.css';
 
 const ClueBox = ({ word, clue }) => {
-  const answerArray = Array.from(word).map((letter, index) => (
+  const lowerCaseWord = word.toLowerCase();
+  const answerArray = Array.from(lowerCaseWord).map((letter, index) => (
     {
       id: index,
       letter,
@@ -17,7 +18,7 @@ const ClueBox = ({ word, clue }) => {
     }
   ));
 
-  const choiceArray = Array.from(word).map((letter, index) => (
+  const choiceArray = Array.from(lowerCaseWord).map((letter, index) => (
     {
       id: index,
       letter,
