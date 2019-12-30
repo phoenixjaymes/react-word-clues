@@ -9,8 +9,8 @@ const Header = ({ handleSectionClick }) => (
       <nav>
         <ul className={styles.ul}>
           <li><button className={styles.button} type="button" onClick={() => handleSectionClick('home')}>Home</button></li>
-          <li><button className={styles.button} type="button" onClick={() => handleSectionClick('clues')}>Clues</button></li>
-          <li><button className={styles.button} type="button">Language</button></li>
+          <li><button className={styles.button} type="button" onClick={() => handleSectionClick('menu')}>Clues</button></li>
+          <li><button className={styles.button} type="button" disabled>Language</button></li>
         </ul>
       </nav>
     </div>
