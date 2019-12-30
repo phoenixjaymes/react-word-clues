@@ -3,7 +3,9 @@ import PropTypes from 'prop-types';
 
 import ClueBox from './ClueBox';
 
-const ClueBoxContainer = ({ words }) => {
+const ClueBoxContainer = ({ wordList }) => {
+  const words = wordList;
+
   const clueBoxes = words.map((word) => (
     <ClueBox
       key={word.id}
@@ -20,7 +22,7 @@ const ClueBoxContainer = ({ words }) => {
 };
 
 ClueBoxContainer.propTypes = {
-  words: PropTypes.arrayOf(PropTypes.object),
+  wordList: PropTypes.arrayOf(PropTypes.object),
 };
 
 export default ClueBoxContainer;
