@@ -165,6 +165,7 @@ const ClueBox = ({ word, clue }) => {
   };
 
   const buttonClassName = answerIsCorrect ? styles.buttonCorrect : styles.button;
+  const correctBoxClassName = answerIsCorrect ? `${styles.correctBox} ${styles.show}` : styles.correctBox;
 
   return (
     <div className={styles.container}>
@@ -182,6 +183,9 @@ const ClueBox = ({ word, clue }) => {
       />
 
       <button className={buttonClassName} type="button" onClick={() => checkAnswer()}>Check</button>
+      <div className={correctBoxClassName}>
+        <p>Correct</p>
+      </div>
     </div>
   );
 };
