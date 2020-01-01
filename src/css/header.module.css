@@ -1,0 +1,33 @@
+.header {
+  background: #FFF6CF;
+
+  text-align: center;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.ul li {
+  display: inline;
+  padding: 0 3px;
+}
+
+.button {
+  background: #ADA16A;
+  border: none;
+  border-radius: 5px;
+  font-size: .9rem;
+  font-weight: bold;
+  letter-spacing: 2px;
+  height: 30px;
+  min-width: 110px;
+}
+
+.button:hover {
+  background: #BDB387;
+  color: #333;
+}
+
+.button[disabled] {
+  background: #CDC6A5;
+  color: #777;
+}
