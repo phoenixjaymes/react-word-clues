@@ -10,7 +10,7 @@ import initialWordsData from '../data/words';
 function App() {
   const [wordsData, setWordsData] = useState(initialWordsData);
   const [wordList, setWordList] = useState([]);
-  const [section, setSection] = useState('menu');
+  const [section, setSection] = useState('home');
 
   useEffect(() => {
     setWordsData(initialWordsData);
