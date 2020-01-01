@@ -183,8 +183,10 @@ const ClueBox = ({ word, clue }) => {
       />
 
       <button className={buttonClassName} type="button" onClick={() => checkAnswer()}>Check</button>
+
       <div className={correctBoxClassName}>
-        <p>Correct</p>
+        <h3>{word.charAt(0).toUpperCase() + word.slice(1)}</h3>
+        <p>Your answer is correct</p>
       </div>
     </div>
   );
