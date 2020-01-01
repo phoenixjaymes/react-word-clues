@@ -1,0 +1,29 @@
+.subMenuWrap {
+  background: #FFF6CF;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  padding: 10px;
+}
+
+.subMenu li {
+  margin-bottom: 10px;
+}
+
+.button {
+  composes: btn from './clueBoxButtons.module.css';
+}
+
+.button:hover {
+  background: #BDB387;
+  background: #8A8BC5;
+  color: #fff;
+}
+
+.languageHeader {
+  color: #fff;
+  margin-bottom: 15px;
+}
+
+.categoryHeader {
+  margin-bottom: 10px;
+}

@@ -1,0 +1,82 @@
+.container {
+  background: #FFF6CF;
+  border-radius: 10px;
+  margin: 0 0 5px 0;
+  overflow: hidden;
+  padding-top: 5px;
+  position: relative;
+}
+
+.header {
+  font-size: 1rem;
+  margin-bottom: 5px;
+}
+
+.button,
+.buttonCorrect {
+  composes: btn from './clueBoxButtons.module.css';
+}
+
+.buttonCorrect {
+  animation: fadeButton .5s ease-in 2.6s forwards;
+}
+
+.correctBox {
+  position: absolute;
+  left: 0;
+  top: 600px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  background: rgba(250, 237, 177, .95);
+  height: 100%;
+  opacity: 0;
+  width: 100%;
+}
+
+.correctBox.show {
+  animation: correctShow .1s ease-in forwards, correctFade 2.5s ease-in-out .1s forwards;
+}
+
+
+@keyframes fadeButton {
+  from {
+    height: 30px;
+    margin: 5px;
+    opacity: 1;
+    transform: scale(1);
+  }
+  to {
+    height: 0;
+    margin: 0;
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@keyframes correctShow {
+  from {
+    top: 600px;
+  }
+  to {
+    top: 0;
+  }
+}
+
+@keyframes correctFade {
+  0% {
+    opacity: 0;
+  }
+  20% {
+    opacity: 1;
+  }
+  80% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}

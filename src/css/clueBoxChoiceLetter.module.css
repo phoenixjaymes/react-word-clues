@@ -1,0 +1,14 @@
+.wrap {
+  composes: btnLetterWrap from './clueBoxButtons.module.css';
+  background: #ddd;
+}
+
+.button {
+  composes: btnLetter from './clueBoxButtons.module.css';
+}
+
+.button[disabled] {
+  background: #FDF9E7;
+  border: none;
+  color: #826E5E;
+}

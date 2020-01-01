@@ -1,0 +1,24 @@
+.container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+
+  height: 43px;
+}
+
+.container.hidden {
+  animation: shrinkChoice .5s ease-in 2.6s forwards;
+}
+
+.container.hidden > div {
+  display: none;
+}
+
+@keyframes shrinkChoice {
+  from {
+    height: 46px;
+  }
+  to {
+    height: 0;
+  }
+}

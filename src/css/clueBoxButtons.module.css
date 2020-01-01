@@ -1,0 +1,47 @@
+.btn {
+  background: #5859AD;
+  border-radius: 5px;
+  color: #FFF6CF;
+  display: inline-block;
+  font-size: .9rem;
+  font-weight: bold;
+  height: 30px;
+  letter-spacing: 1px;
+  margin: 5px;
+  padding: 5px;
+  width: 110px;
+}
+
+.btn:hover {
+  background: #8A8BC5;
+  color: #fff;
+}
+
+.btnLetterWrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  
+  border-radius: 4px;
+  height: 37px;
+  margin: 3px;
+  width: 37px;
+}
+
+.btnLetter {
+  background: #FAEDB2;
+  border-radius: 5px;
+  color: #4D301A;
+  font-size: .9rem;
+  font-weight: bold;
+  height: 35px;
+  width: 35px;
+}
+
+.btnLetter:hover {
+  background: #FDF7E0;
+}
+
+.btnLetter:active {
+  background: #E1D5A0;
+}
