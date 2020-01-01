@@ -10,7 +10,7 @@ const CluesMenu = ({ wordsData, handleSectionClick }) => {
       <h2 className={styles.languageHeader}>{language.name}</h2>
       {language.data.map((category) => (
         <ul key={category.id}>
-          <li>
+          <li className={styles.subMenuWrap}>
             <h3 className={styles.categoryHeader}>
               {category.category.charAt(0).toUpperCase() + category.category.slice(1)}
             </h3>
