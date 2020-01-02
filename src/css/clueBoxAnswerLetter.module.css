@@ -3,11 +3,11 @@
   background: #ddd;
 }
 
-.wrapChecking {
-  composes: btnLetterWrap from './clueBoxButtons.module.css';
-  background: #d00;
-}
-
 .button {
   composes: btnLetter from './clueBoxButtons.module.css';
+}
+
+.buttonChecking {
+  composes: btnLetter from './clueBoxButtons.module.css';
+  border-color: #f00;
 }
