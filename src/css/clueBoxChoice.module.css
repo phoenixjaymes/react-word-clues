@@ -2,8 +2,9 @@
   display: flex;
   justify-content: center;
   flex-wrap: wrap;
+  align-items: center;
 
-  height: 43px;
+  height: 41px;
 }
 
 .container.hidden {
@@ -16,7 +17,7 @@
 
 @keyframes shrinkChoice {
   from {
-    height: 46px;
+    height: 41px;
   }
   to {
     height: 0;

@@ -1,8 +1,9 @@
 .container {
   display: flex;
   justify-content: center;
+  align-items: center;
 
-  height: 43px;
+  height: 41px;
   margin-bottom: 5px;
   background: rgba(173, 161, 106, .4);
 }
