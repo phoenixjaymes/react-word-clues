@@ -7,7 +7,7 @@ import styles from '../css/home.module.css';
 
 const Home = ({ handleSectionClick }) => (
   <Layout
-    header="Home"
+    header=""
     handleSectionClick={handleSectionClick}
   >
     <div className={styles.container}>
