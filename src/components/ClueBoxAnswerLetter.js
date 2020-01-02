@@ -15,7 +15,7 @@ const ClueBoxAnswerLetter = ({
     choiceLetter: letter.letter,
   };
 
-  const wrapClassName = (isCheckingAnswer && !letter.isCorrect) ? styles.wrapChecking : styles.wrap;
+  const btnClassName = (isCheckingAnswer && !letter.isCorrect) ? styles.buttonChecking : styles.button;
 
   if (answerIsCorrect) {
     return (
@@ -27,8 +27,8 @@ const ClueBoxAnswerLetter = ({
 
   if (letter.choiceLetter !== '') {
     return (
-      <div className={wrapClassName}>
-        <button className={styles.button} type="button" onClick={() => handleAnswerClick(answerObj)}>{letter.choiceLetter}</button>
+      <div className={styles.wrap}>
+        <button className={btnClassName} type="button" onClick={() => handleAnswerClick(answerObj)}>{letter.choiceLetter}</button>
       </div>
     );
   }
