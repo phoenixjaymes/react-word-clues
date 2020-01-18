@@ -7,7 +7,9 @@ import styles from '../css/clueMenu.module.css';
 const CluesMenu = ({ wordsData, handleSectionClick }) => {
   const menu = wordsData.map((language) => (
     <div key={language.id}>
-      <h2 className={styles.languageHeader}>{language.name}</h2>
+      <h2 className={styles.languageHeader}>
+        {language.name.charAt(0).toUpperCase() + language.name.slice(1)}
+      </h2>
       {language.data.map((category) => (
         <ul key={category.id}>
           <li className={styles.subMenuWrap}>
