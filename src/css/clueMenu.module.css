@@ -5,8 +5,13 @@
   padding: 10px;
 }
 
-.subMenu li {
-  margin-bottom: 10px;
+.subMenu {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 115px));
+  gap: 1px 1px;
+  align-items: center;
+  justify-content: center;
+  justify-items: center;
 }
 
 .button {
