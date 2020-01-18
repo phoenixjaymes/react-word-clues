@@ -13,7 +13,19 @@ function App() {
   const [section, setSection] = useState('home');
 
   useEffect(() => {
-    setWordsData(initialWordsData);
+
+    fetch('http://phoenixjaymes.com/assets/data/language/get-clues.php')
+      .then((reponse) => reponse.json())
+      .then((responseData) => {
+        // loading: false
+
+        if (responseData.status === 'success') {
+          setWordsData(responseData.data);
+        }
+      })
+      .catch((error) => {
+        // loading: false
+      });
   }, []);
 
 
