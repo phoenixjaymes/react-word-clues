@@ -13,8 +13,7 @@ function App() {
   const [section, setSection] = useState('home');
 
   useEffect(() => {
-
-    fetch('http://phoenixjaymes.com/assets/data/language/get-clues.php')
+    fetch('http://phoenixjaymes.com/assets/data/language/clues/')
       .then((reponse) => reponse.json())
       .then((responseData) => {
         // loading: false
